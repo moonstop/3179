@@ -83,7 +83,7 @@
                       "title": "Country"
                   },
                   {
-                      "field": "Confirmed",
+                      "field": "Confirmed Cases",
                       "type": "quantitative"
                   }
               ]
