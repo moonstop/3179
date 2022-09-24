@@ -4,8 +4,8 @@
   "width": 800,
   "height": 450,
   "data": {
-    "url": "https://github.com/moonstop/3179/blob/main/js/ne_110m.json",
-    "format": {"type": "topojson", "feature": "ne_110m.json"}
+    "url": "https://github.com/moonstop/3179/blob/main/js/output.json",
+    "format": {"type": "topojson", "feature": "oputput.json"}
   },
     
     "transform": [
@@ -13,10 +13,13 @@
         "joinaggregate": [{
           "op": "mean",
           "field": "salary_in_usd",
-          "as": "average salary"
+          "as": "average_salary"
         }],
         "groupby": ["country"]
       },
+
+      {"calculate": "datum.average_salary + 0.0001", "as": "Average Salaries"},
+
       {
         "lookup": "properties.NAME",
         "from": {
