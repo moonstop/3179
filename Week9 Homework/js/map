@@ -64,7 +64,7 @@
                       "key": "Country/Region",
                       "fields": [
                           "Confirmed"]
-                  },
+                  }
               }
           ],
           "mark": {
