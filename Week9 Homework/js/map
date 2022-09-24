@@ -15,12 +15,6 @@
   },
   "layer": [
       {
-          "transform": [
-              {
-                  "calculate": "'Data is not available in ' + datum.properties.NAME",
-                  "as": "note"
-              }
-          ],
           "mark": {
               "type": "geoshape",
               "fill": "lightgray",
@@ -65,13 +59,12 @@
                   "lookup": "properties.NAME",
                   "from": {
                       "data": {
-                          "url": "https://raw.githubusercontent.com/moonstop/3179/main/data/ds_salaries.csv"
+                          "url": "https://raw.githubusercontent.com/moonstop/3179/main/Week9%20Homework/data/country_wise_latest.csv"
                       },
-                      "key": "Country",
+                      "key": "Country/Region",
                       "fields": [
-                          "2022 Population"
-                      ]
-                  }
+                          "Confirmed"]
+                  },
               }
           ],
           "mark": {
@@ -80,7 +73,7 @@
           },
           "encoding": {
               "color": {
-                  "field": "2022 Population",
+                  "field": "Confirmed",
                   "type": "quantitative"
               },
               "tooltip": [
@@ -90,7 +83,7 @@
                       "title": "Country"
                   },
                   {
-                      "field": "2022 Population",
+                      "field": "Confirmed",
                       "type": "quantitative"
                   }
               ]
