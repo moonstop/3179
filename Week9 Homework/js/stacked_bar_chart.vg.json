@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 1000,
+    "height": 600,
+    "data": { 
+        "url": "https://raw.githubusercontent.com/moonstop/3179/main/Week9%20Homework/data/country_wise_latest.csv"
+    },
+    "mark":  "bar",
+    "transform": [{
+        "fold": ["Active", "Deaths"],
+        "as": ["active", "deaths"]
+       }],
+    "encoding": {
+        "x": {"field": "Country/Region", "type": "nominal" },
+        "y": { "aggregate": "sum", "type": "quantitative" },
+        "color": {
+            "field": "WHO Region",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Active", "Deaths", "Recovered"],
+              "range": ["#FF0000", "#c7c7c7", "#aec7e8"]
+            },
+            "title": "Confirmed Cases"
+          }
+        }
+      }
