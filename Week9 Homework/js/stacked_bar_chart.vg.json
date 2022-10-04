@@ -6,21 +6,26 @@
         "url": "https://raw.githubusercontent.com/moonstop/3179/main/Week9%20Homework/data/country_wise_latest.csv"
     },
     "mark":  "bar",
-    "transform": [{
-        "fold": ["Active", "Deaths"],
-        "as": ["active", "deaths"]
-       }],
+    "transform": [{"fold": ["Active", "Deaths", "Recovered"], "as": ["status", "value"]}],
     "encoding": {
         "x": {"field": "Country/Region", "type": "nominal" },
-        "y": { "aggregate": "sum", "type": "quantitative" },
+        "y": { "field": "value", "aggregate": "sum", "type": "quantitative", "stack": "normalize", "title": "Cases"},
         "color": {
-            "field": "WHO Region",
+            "field": "status",
             "type": "nominal",
             "scale": {
-              "domain": ["Active", "Deaths", "Recovered"],
-              "range": ["#FF0000", "#c7c7c7", "#aec7e8"]
-            },
-            "title": "Confirmed Cases"
-          }
+              "domain": ["Active", "Recovered", "Deaths"],
+              "range": ["#82E0AA", "#F7DC6F", "#F1948A"]
+            }
+        
+          },
+          "tooltip": [
+            {"field": "Country/Region", "type": "nominal"},
+            {"field": "Active", "type": "quantitative", "format": ","},
+            {"field": "Deaths", "type": "quantitative", "format": ","},
+            {"field": "Recovered", "type": "quantitative", "format": ","},
+            {"field": "Confirmed", "type": "quantitative"}
+            ]
         }
+    
       }
