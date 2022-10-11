@@ -1,0 +1,95 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Covid-19 Cases per WHO Region",
+        "anchor": "middle",
+        "fontSize": 20
+      },
+    "width": 800,
+    "height": 600,
+    "data": { 
+        "url": "https://raw.githubusercontent.com/moonstop/3179/main/Week9%20Homework/data/country_wise_latest.csv"
+    },
+    "params": [
+        {
+        "name": "Continent_selection",
+        "bind": {
+        "input": "select",
+        "options": ["null",
+        "Africa",
+        "Americas",
+        "Eastern Mediterranean",
+        "Europe",
+        "South-East Asia",
+        "Western Pacific"],
+        "labels": ["Show All",
+        "Africa",
+        "Americas",
+        "Eastern Mediterranean",
+        "Europe",
+        "South-East Asia",
+        "Western Pacific"],
+        "name": "Continent Selection"
+         }} ],  
+    
+         "transform": [
+             {"filter": "datum['Deaths / 100 Cases'] > 0"},
+             {"filter": "datum['Recovered / 100 Cases'] > 0"},
+             {"filter": "Continent_selection == null || datum['WHO Region'] == Continent_selection"}], 
+    "mark" : "circle",
+    "encoding": {
+        "x": {"field": "Deaths / 100 Cases", "type": "quantitative",
+        "axis": {"tickCount": 7}}
+    ,
+        "y": { "field": "Recovered / 100 Cases", "type": "quantitative",
+        "axis": {"tickCount": 6}},
+        "size": {
+            "field": "1 week % increase",
+            "type": "quantitative",
+            "scale": {
+            "type": "threshold",
+            "domain": [5, 10, 20, 35, 50],
+            "range": [50, 150, 250, 350, 500]
+            },
+            "legend": {"format": ".1s"}
+            },
+            
+        "color": {
+            "field": "WHO Region",
+            "type": "nominal",
+            "scale": {
+            "domain": [
+            "Africa",
+            "Americas",
+            "Eastern Mediterranean",
+            "Europe",
+            "South-East Asia",
+            "Western Pacific"
+            ],
+            "range": [
+            "#DE3163",
+            "#FFBF00",
+            "#9FE2BF",
+            "#6495ED",
+            "#CCCCFF",
+            "#DFFF00"
+            ]
+            }
+            },
+            "opacity": {
+            "value": 0.8
+            },
+
+          "tooltip": [
+            {"field": "WHO Region", "type": "nominal"},
+            {"field": "Deaths / 100 Cases", "type": "quantitative", "format": ","},
+            {"field": "Recovered / 100 Cases", "type": "quantitative", "format": ","},
+            {"field": "1 week % increase", "type": "quantitative"}
+            ]
+        
+          
+        }
+    
+
+        
+                }
