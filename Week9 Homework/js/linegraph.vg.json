@@ -29,13 +29,28 @@
         "Europe",
         "South-East Asia",
         "Western Pacific"],
-        "name": "Continent Selection"
-         }} ],  
+        "name": "Continent Selection: "
+         }},
+         {
+            "name": "Percentage",
+            "value": 0,
+            "bind": {
+            "input": "range",
+            "min": 0,
+            "max": 250,
+            "step": 0.5,
+            "name": "Percentage (%): "
+            }
+            }
+            
+         ],  
     
          "transform": [
              {"filter": "datum['Deaths / 100 Cases'] > 0"},
              {"filter": "datum['Recovered / 100 Cases'] > 0"},
-             {"filter": "Continent_selection == null || datum['WHO Region'] == Continent_selection"}], 
+             {"filter": "Continent_selection == null || datum['WHO Region'] == Continent_selection"},
+             {"filter": "datum['1 week % increase'] > Percentage"}
+            ], 
     "mark" : "circle",
     "encoding": {
         "x": {"field": "Deaths / 100 Cases", "type": "quantitative",
@@ -51,7 +66,8 @@
             "domain": [5, 10, 20, 35, 50],
             "range": [50, 150, 250, 350, 500]
             },
-            "legend": {"format": ".1s"}
+            "legend": {"format": ".1s"},
+            "title": "Percentage Increase in 1 Week"
             },
             
         "color": {
