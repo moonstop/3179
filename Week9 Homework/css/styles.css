@@ -1,20 +1,22 @@
 html,
 body {
     background-color: #D4ECDE ;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 h1 {
     text-align: center;
     margin-top: 20px;
-    font-size: 220%;
-    font-family: 'Fira Sans', sans-serif;
+    font-size: 50px;
+    font-family: 'Merriweather', serif;
 }
 
+
+
 #choropleth_map,
-#bubble_ chart,
-#percentage,
-#growth_rate {
+#bubble_chart,
+#stacked_bar_chart
+{
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -22,24 +24,17 @@ h1 {
     width: 80%;
     padding: auto;
 }
+.class-select{
+	text-align: center;
+	font-family: 'Merriweather', serif;
+	font-size: 20;
+}
 
 
 p {
     text-align: center;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Merriweather', serif;
     margin: 20px;
+	font-size: 50;
 }
 
-#figure {
-    color: red;
-    font-size: 150%;
-}
-
-.blue {
-    color: blue;
-    font-size: 125%;
-}
-
-.text {
-    padding: 70px 0;
-}
