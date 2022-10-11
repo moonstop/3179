@@ -99,7 +99,8 @@
             },
 
           "tooltip": [
-            {"field": "WHO Region", "type": "nominal"},
+            {"field": "WHO Region", "type": "nominal", "format": ","},
+            {"field": "Country/Region", "type": "nominal", "format": ","},
             {"field": "Deaths / 100 Cases", "type": "quantitative", "format": ","},
             {"field": "Recovered / 100 Cases", "type": "quantitative", "format": ","},
             {"field": "1 week % increase", "type": "quantitative"}
