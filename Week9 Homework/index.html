@@ -13,11 +13,16 @@
 </head>
 <body>
   <h1>Covid-19</h1>
-  <p id="intro">A disease caused by a virus named SARS-CoV-2 and was discovered in December 2019 in Wuhan, China.</p>
+  <p id="intro">A new disease caused by a virus named SARS-CoV-2 and was discovered in December 2019 in Wuhan, China. 
+    People developed pneumonia without a clear cause and for which existing vaccines or treatments were not effective.
+    The virus has shown evidence of human-to-human transmission.
+  </p>
   
 <div id="choropleth_map"></div>
 
 <div id="stacked_bar_chart"></div>
+
+<div id="linegraph"></div>
 
 <script type="text/javascript">
 
@@ -28,6 +33,11 @@
 
   var spec2 = "js/stacked_bar_chart.vg.json";
   vegaEmbed('#stacked_bar_chart', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var spec2 = "js/linegraph.vg.json";
+  vegaEmbed('#linegraph', spec2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
