@@ -1,9 +1,10 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
    
-    "width": 450,
+    "width": 800,
     "height": 400,
     "background": "#D4ECDE",
+    "title": "Covid-19 Status by each WHO Region",
     "data": { 
         "url": "https://raw.githubusercontent.com/moonstop/3179/main/Week9%20Homework/data/country_wise_latest.csv"
     },

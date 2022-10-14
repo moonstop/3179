@@ -1,8 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 300,
-    "height": 400,
-    "background": "#D4ECDE",
+    "width": 600,
+    "height": 600,
+    "background": "#e9efec",
+    "title": "Death and Recoverd rate by WHO Region and Percentage Increase in One Week",
     "data": { 
         "url": "https://raw.githubusercontent.com/moonstop/3179/main/Week9%20Homework/data/country_wise_latest.csv"
     },
@@ -45,7 +46,7 @@
              {"filter": "datum['Deaths / 100 Cases'] > 0"},
              {"filter": "datum['Recovered / 100 Cases'] > 0"},
              {"filter": "Continent_selection == null || datum['WHO Region'] == Continent_selection"},
-             {"filter": "datum['1 week % increase'] < Percentage"}
+             {"filter": "datum['1 week % increase'] < Percentage "}
             ], 
     "mark" : "circle",
     "encoding": {
@@ -61,8 +62,8 @@
             "type": "quantitative",
             "scale": {
             "type": "threshold",
-            "domain": [5, 10, 20, 35, 50],
-            "range": [50, 150, 250, 350, 500]
+            "domain": [10, 20, 50, 100],
+            "range": [10, 100, 350, 500, 1000]
             },
             "legend": {"format": ".1s"},
             "title": "Percentage Increase in 1 Week"
