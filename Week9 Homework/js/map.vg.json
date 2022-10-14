@@ -1,8 +1,12 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     
-      "width": 400,
+      "width": 800,
       "height": 400,
+      "background": "#D4ECDE",
+      "title": "Number of Confirmed Cases per 10k Population by Country",
+      
+      
     "data": {
         "url": "https://raw.githubusercontent.com/moonstop/3179/main/Week9%20Homework/js/output.json",
         "format": {
@@ -36,7 +40,7 @@
             },
             "mark": {
                 "type": "geoshape",
-                "fill": "skyblue"
+                "fill": "#C8EBF9"
             }
         },
         {
@@ -76,7 +80,21 @@
           
                 "color": {
                     "field": "Confirmed Cases per 10000",
-                    "type": "quantitative"
+                    "type": "quantitative",
+                    "scale": {
+                        "type": "threshold",
+                        "domain": [50, 100, 150, 200],
+                        "range": ["#62E496 ", "#0BC959", "#158C45", "#075928", "#0B3C1F"]
+                      },
+                      "legend": {
+                        "title": "Confirmed Cases per 10k",
+                        "titleFontSize": 11,
+                        "direction": "horizontal",
+                        "orient": "bottom-left",
+                        "labelFont": "Open Sans",
+                        "labelFontSize": 10,
+                        "gradientLength": 200
+                    }
                 },
                 "tooltip": [
                     {
