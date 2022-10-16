@@ -12,8 +12,30 @@
         "name": "status_filter",
         "select": {"type": "point", "fields": ["status"]},
         "bind": "legend"
-        }
-        ],"transform": [{"fold": ["Active", "Deaths", "Recovered"], "as": ["status", "value"]}],
+        },
+        
+          {
+          "name": "Continent_selection",
+          "bind": {
+          "input": "select",
+          "options": ["null",
+          "Africa",
+          "Americas",
+          "Eastern Mediterranean",
+          "Europe",
+          "South-East Asia",
+          "Western Pacific"],
+          "labels": ["Show All",
+          "Africa",
+          "Americas",
+          "Eastern Mediterranean",
+          "Europe",
+          "South-East Asia",
+          "Western Pacific"],
+          "name": "Continent Selection: "
+           }}
+        ],"transform": [{"fold": ["Active", "Deaths", "Recovered"], "as": ["status", "value"]},
+        {"filter": "Continent_selection == null || datum['WHO Region'] == Continent_selection"}],
     "mark" : "bar",
     "encoding": {
         "x": {"field": "WHO Region", "type": "nominal" },
