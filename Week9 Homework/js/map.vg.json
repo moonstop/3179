@@ -96,7 +96,7 @@
                         "titleFontSize": 11,
                         "direction": "horizontal",
                         "orient": "bottom-left",
-                        "labelFont": "Open Sans",
+                        
                         "labelFontSize": 10,
                         "gradientLength": 200
                     }

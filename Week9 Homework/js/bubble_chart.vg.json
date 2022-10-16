@@ -67,6 +67,7 @@
             },
             "legend": {"format": ".1s"},
             "title": "Percentage Increase in 1 Week"
+        
             },
             
         "color": {
@@ -89,8 +90,19 @@
             "#CCCCFF",
             "#DFFF00"
             ]
+            },
+
+            "legend": {
+                "title": "Region",
+                "titleFontSize": 11,
+                "direction": "vertical",
+               
+                "labelFontSize": 10,
+                "gradientLength": 200
             }
             },
+
+            
             "opacity": {
             "value": 0.8
             },

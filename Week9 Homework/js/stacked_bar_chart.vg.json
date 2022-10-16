@@ -46,7 +46,15 @@
             "scale": {
               "domain": ["Active", "Recovered", "Deaths"],
               "range": ["#82E0AA", "#F7DC6F", "#F1948A"]
-            }
+            },
+            "legend": {
+              "title": "Covid-19 Status",
+              "titleFontSize": 11,
+              "direction": "vertical",
+              
+              "labelFontSize": 10,
+              "gradientLength": 200
+          }
         
           },
           "tooltip": [
